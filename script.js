@@ -136,6 +136,32 @@
     counters.forEach(function (el) { io.observe(el); });
   }
 
+  // 3D tilt-on-hover for cards — pointer position drives rotateX/rotateY plus a
+  // moving light sheen, so depth reacts to the cursor instead of a static effect.
+  function initTiltCards() {
+    var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion || !window.matchMedia || !window.matchMedia('(hover: hover)').matches) return;
+    var cards = document.querySelectorAll('.tilt');
+    cards.forEach(function (card) {
+      var max = 9;
+      function onMove(e) {
+        var rect = card.getBoundingClientRect();
+        var px = (e.clientX - rect.left) / rect.width;
+        var py = (e.clientY - rect.top) / rect.height;
+        var rx = (0.5 - py) * max * 2;
+        var ry = (px - 0.5) * max * 2;
+        card.style.transform = 'perspective(900px) rotateX(' + rx.toFixed(2) + 'deg) rotateY(' + ry.toFixed(2) + 'deg) translateZ(6px)';
+        card.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+        card.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+      }
+      function onLeave() {
+        card.style.transform = '';
+      }
+      card.addEventListener('mousemove', onMove);
+      card.addEventListener('mouseleave', onLeave);
+    });
+  }
+
   function initProgressBar() {
     var bar = document.createElement('div');
     bar.className = 'scroll-progress';
@@ -158,5 +184,6 @@
     initReveal();
     initCounters();
     initProgressBar();
+    initTiltCards();
   });
 })();
