@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact OneX Academy | Dubai Training Hub</title>
+<meta name="description" content="Book a free consultation, ask about a programme, or reach OneX Academy in Dubai by phone, WhatsApp or email.">
+<link rel="icon" href="https://onexacademy.com/images/favicon.png">
+<link rel="stylesheet" href="../style.css">
+<script src="../script.js" defer></script>
+<style>
+  .field { display:flex; flex-direction:column; gap:0.5em; margin-bottom:var(--sp-4); }
+  .field label { font-size:0.82rem; letter-spacing:0.06em; text-transform:uppercase; font-weight:600; color:var(--muted-on-paper); }
+  .field input, .field select, .field textarea {
+    font-family:var(--font-body); font-size:1rem; padding:0.85em 1em; border:1px solid var(--paper-3);
+    background:var(--sand); color:var(--ink-text); border-radius:var(--radius);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { outline:2px solid var(--accent); outline-offset:1px; }
+  .contact-card { background:var(--ink-2); border:1px solid rgba(85,89,181,0.35); padding:var(--sp-5); margin-bottom:var(--sp-4); }
+  .contact-card h4 { color:var(--accent-light); font-family:var(--font-body); font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:0.6em; }
+  .contact-card p { color:var(--muted-on-ink); margin:0; }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header" data-include="header"></header>
+
+<main id="main">
+
+  <section class="hero hero--small">
+    <div class="container hero-fade">
+      <p class="breadcrumb"><a href="/">Home</a> &rsaquo; Contact</p>
+      <p class="eyebrow">Get in touch</p>
+      <h1>Talk to OneX Academy</h1>
+      <p class="lede">Have a question about a programme, or ready to enrol? Book a free consultation and we'll help you choose the right path &mdash; real estate, hospitality or AI.</p>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="container">
+      <div class="split">
+        <div>
+          <p class="eyebrow">Book a free consultation</p>
+          <form id="enquiry-form" novalidate>
+            <div class="field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="field">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+            <div class="field">
+              <label for="programme">Programme of interest</label>
+              <select id="programme" name="programme">
+                <option>Real Estate</option>
+                <option>Hospitality</option>
+                <option>AI for Professionals</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Send enquiry <span class="arrow">&rarr;</span></button>
+            <p id="form-success" role="status" style="display:none;margin-top:var(--sp-4);color:var(--accent);font-weight:600;">Thanks &mdash; this is a sample site, so nothing was actually sent, but on the live site your enquiry lands with our team here.</p>
+          </form>
+        </div>
+        <div>
+          <p class="eyebrow">Reach us directly</p>
+          <div class="contact-card">
+            <h4>Phone &amp; WhatsApp</h4>
+            <p>Direct lines will be published here at launch. Use the form for now and we'll respond by email.</p>
+          </div>
+          <div class="contact-card">
+            <h4>Email</h4>
+            <p><a href="mailto:hello@onexacademy.com" style="color:var(--accent-light);">hello@onexacademy.com</a></p>
+          </div>
+          <div class="contact-card">
+            <h4>Address</h4>
+            <p>Dubai, United Arab Emirates &mdash; full office address and map confirmed at launch.</p>
+          </div>
+          <div class="callout" style="margin-top:var(--sp-4);">
+            <span class="dot"></span>
+            <span>This is a sample build of the OneX Academy site. Live phone numbers, address and social links will replace these notes before launch.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section--sand2 reveal">
+    <div class="container">
+      <p class="eyebrow">FAQ</p>
+      <h2>Before you reach out</h2>
+      <div class="faq" style="margin-top:var(--sp-6);">
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>What happens after I submit an enquiry?</span><span class="plus">+</span></button>
+          <div class="faq-a"><p>A member of our team follows up directly &mdash; response-time commitment confirmed at launch.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>Can I visit your Dubai office?</span><span class="plus">+</span></button>
+          <div class="faq-a"><p>In-person consultations will be available &mdash; booking details confirmed at launch.</p></div>
+        </div>
+        <div class="faq-item" data-open="false">
+          <button class="faq-q"><span>Which programme should I choose?</span><span class="plus">+</span></button>
+          <div class="faq-a"><p>Tell us a bit about your goals in the form above &mdash; we'll point you to the right tier across <a href="/real-estate-courses-dubai/">Real Estate</a>, <a href="/hospitality-course-dubai/">Hospitality</a> or <a href="/ai-courses-dubai/">AI</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" data-include="footer"></footer>
+<script>
+  document.getElementById('enquiry-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('form-success').style.display = 'block';
+    this.reset();
+  });
+</script>
+</body>
+</html>
