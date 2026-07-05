@@ -27,41 +27,44 @@
           <a href="/contact/" class="btn btn--ghost btn--on-ink">Ask which fits your programme</a>
         </div>
       </div>
-      <div class="career-scene" aria-hidden="true">
-        <div class="scene-float">
-          <svg viewBox="0 0 240 260">
-            <path d="M120,202 220,228 120,254 20,228 Z" fill="var(--ink-2)" opacity="0.9"/>
-            <g transform="translate(120,160)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <line x1="-40" y1="20" x2="0" y2="40" stroke="#fff" stroke-width="2" opacity="0.5"/>
-              <line x1="0" y1="40" x2="40" y2="20" stroke="#fff" stroke-width="2" opacity="0.35"/>
+      <div class="career-path" data-stages="3">
+        <svg viewBox="0 0 300 280" role="img" aria-label="Flow: Enrol to Add Extras to Accelerate" overflow="visible">
+          <path class="cp-road" d="M26,220 C80,225 110,200 150,175 C190,150 210,110 262,70"/>
+          <path class="cp-road-fill" d="M26,220 C80,225 110,200 150,175 C190,150 210,110 262,70"/>
+          <path class="cp-pulse-path" d="M26,220 C80,225 110,200 150,175 C190,150 210,110 262,70"/>
+
+          <g class="cp-node-anchor n1" transform="translate(26,220)">
+            <g class="cp-node">
+              <circle class="cp-node-ping" r="12"/>
+              <circle class="cp-node-ring" r="12"/>
+              <circle class="cp-node-dot" r="6"/>
             </g>
-            <g transform="translate(120,130)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <line x1="-40" y1="20" x2="0" y2="40" stroke="#fff" stroke-width="2" opacity="0.5"/>
-              <line x1="0" y1="40" x2="40" y2="20" stroke="#fff" stroke-width="2" opacity="0.35"/>
-              <line x1="0" y1="40" x2="0" y2="70" stroke="#fff" stroke-width="2" opacity="0.4"/>
+            <text class="cp-label-stage" x="0" y="22">Step 1</text>
+            <text class="cp-label-title" x="0" y="34">Enrol</text>
+          </g>
+
+          <g class="cp-node-anchor n2" transform="translate(150,175)">
+            <g class="cp-node">
+              <circle class="cp-node-ping" r="12"/>
+              <circle class="cp-node-ring" r="12"/>
+              <circle class="cp-node-dot" r="6"/>
             </g>
-            <g transform="translate(120,100)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <line x1="-40" y1="20" x2="0" y2="40" stroke="#fff" stroke-width="2" opacity="0.5"/>
-              <line x1="0" y1="40" x2="40" y2="20" stroke="#fff" stroke-width="2" opacity="0.35"/>
-              <line x1="0" y1="40" x2="0" y2="70" stroke="#fff" stroke-width="2" opacity="0.4"/>
-            </g>
-            <g transform="translate(120,88)">
-              <path d="M0,0 -15,-13 -15,5 Z" fill="var(--accent-light)"/>
-              <path d="M0,0 15,-13 15,5 Z" fill="var(--accent-light)"/>
-              <circle cx="0" cy="0" r="6" fill="#fff"/>
-            </g>
-          </svg>
-        </div>
-        <p class="role-tag">Extend Your Training</p>
+            <text class="cp-label-stage" x="0" y="-32">Step 2</text>
+            <text class="cp-label-title" x="0" y="-20">Add Extras</text>
+          </g>
+
+          <g class="cp-node-anchor cp-node-final" transform="translate(262,70)">
+            <circle class="cp-final-glow" r="12"/>
+            <circle class="cp-node-ring cp-node-ring-final" r="14"/>
+            <circle class="cp-node-dot cp-node-dot-final" r="8"/>
+            <circle class="cp-node-core" r="3"/>
+          </g>
+
+          <g class="cp-final-pill" transform="translate(160,88)">
+            <rect class="cp-final-pill-bg" width="128" height="24" rx="12"/>
+            <text class="cp-final-pill-text" x="64" y="16">Accelerate</text>
+          </g>
+        </svg>
       </div>
     </div>
   </section>

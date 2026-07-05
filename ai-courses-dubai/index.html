@@ -27,51 +27,44 @@
           <a href="/contact/" class="btn btn--ghost btn--on-ink">Book a free consultation</a>
         </div>
       </div>
-      <div class="career-scene" aria-hidden="true">
-        <div class="scene-float">
-          <svg viewBox="0 0 240 260">
-            <path d="M120,202 220,228 120,254 20,228 Z" fill="var(--ink-2)" opacity="0.9"/>
-            <g transform="translate(120,160)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <rect x="-32" y="34" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="-32" y="47" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="10" y="34" width="10" height="9" fill="#fff" opacity="0.14"/>
-              <rect x="10" y="47" width="10" height="9" fill="#fff" opacity="0.14"/>
+      <div class="career-path" data-stages="3">
+        <svg viewBox="0 0 300 280" role="img" aria-label="Career path: Analyst to AI-Augmented Specialist to Senior Specialist or Team Lead" overflow="visible">
+          <path class="cp-road" d="M30,230 C70,230 65,180 120,165 C180,148 200,80 260,50"/>
+          <path class="cp-road-fill" d="M30,230 C70,230 65,180 120,165 C180,148 200,80 260,50"/>
+          <path class="cp-pulse-path" d="M30,230 C70,230 65,180 120,165 C180,148 200,80 260,50"/>
+
+          <g class="cp-node-anchor n1" transform="translate(30,230)">
+            <g class="cp-node">
+              <circle class="cp-node-ping" r="12"/>
+              <circle class="cp-node-ring" r="12"/>
+              <circle class="cp-node-dot" r="6"/>
             </g>
-            <g transform="translate(120,130)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <rect x="-32" y="34" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="-32" y="47" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="10" y="34" width="10" height="9" fill="#fff" opacity="0.14"/>
-              <rect x="10" y="47" width="10" height="9" fill="#fff" opacity="0.14"/>
+            <text class="cp-label-stage" x="0" y="22">Stage 1</text>
+            <text class="cp-label-title" x="0" y="34">Analyst</text>
+          </g>
+
+          <g class="cp-node-anchor n2" transform="translate(120,165)">
+            <g class="cp-node">
+              <circle class="cp-node-ping" r="12"/>
+              <circle class="cp-node-ring" r="12"/>
+              <circle class="cp-node-dot" r="6"/>
             </g>
-            <g transform="translate(120,100)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <path d="M-30,38 -14,38" stroke="var(--ink)" stroke-width="1.5" opacity="0.4"/>
-              <path d="M-30,44 -20,44" stroke="var(--ink)" stroke-width="1.5" opacity="0.4"/>
-              <path d="M12,38 28,38" stroke="var(--ink)" stroke-width="1.5" opacity="0.3"/>
-              <path d="M12,44 22,44" stroke="var(--ink)" stroke-width="1.5" opacity="0.3"/>
-            </g>
-            <g stroke="var(--accent-light)" stroke-width="1.5" fill="var(--accent-light)" opacity="0.95">
-              <line x1="120" y1="78" x2="92" y2="54"/>
-              <line x1="120" y1="78" x2="148" y2="54"/>
-              <line x1="120" y1="78" x2="120" y2="48"/>
-              <line x1="92" y1="54" x2="120" y2="48"/>
-              <line x1="148" y1="54" x2="120" y2="48"/>
-              <circle cx="120" cy="78" r="5"/>
-              <circle cx="92" cy="54" r="4"/>
-              <circle cx="148" cy="54" r="4"/>
-              <circle cx="120" cy="48" r="4"/>
-            </g>
-          </svg>
-        </div>
-        <p class="role-tag">AI-Augmented Professional</p>
+            <text class="cp-label-stage" x="0" y="-32">Stage 2</text>
+            <text class="cp-label-title" x="0" y="-20">AI-Augmented Specialist</text>
+          </g>
+
+          <g class="cp-node-anchor cp-node-final" transform="translate(260,50)">
+            <circle class="cp-final-glow" r="12"/>
+            <circle class="cp-node-ring cp-node-ring-final" r="14"/>
+            <circle class="cp-node-dot cp-node-dot-final" r="8"/>
+            <circle class="cp-node-core" r="3"/>
+          </g>
+
+          <g class="cp-final-pill" transform="translate(95,64)">
+            <rect class="cp-final-pill-bg" width="190" height="24" rx="12"/>
+            <text class="cp-final-pill-text" x="95" y="16" style="font-size:9.5px;">Senior Specialist / Team Lead</text>
+          </g>
+        </svg>
       </div>
     </div>
   </section>

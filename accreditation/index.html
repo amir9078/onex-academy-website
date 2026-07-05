@@ -23,40 +23,45 @@
         <h1>Our accreditation &mdash; KHDA-approved and internationally recognised</h1>
         <p class="lede">OneX Academy is the training and education provider. Our programmes carry multiple accreditations: Vocatech, a KHDA-approved training body in the UAE, plus additional international accreditation and recognition. This page explains exactly what that means, what it doesn't mean, and how to verify it &mdash; in plain language, not marketing copy.</p>
       </div>
-      <div class="career-scene" aria-hidden="true">
-        <div class="scene-float">
-          <svg viewBox="0 0 240 260">
-            <path d="M120,202 220,228 120,254 20,228 Z" fill="var(--ink-2)" opacity="0.9"/>
-            <g transform="translate(120,160)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <rect x="-32" y="34" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="10" y="34" width="10" height="9" fill="#fff" opacity="0.14"/>
+      <div class="career-path" data-stages="3">
+        <svg viewBox="0 0 300 280" role="img" aria-label="Flow: Train to Certify to Verify" overflow="visible">
+          <path class="cp-road" d="M26,220 C80,225 110,200 150,175 C190,150 210,110 262,70"/>
+          <path class="cp-road-fill" d="M26,220 C80,225 110,200 150,175 C190,150 210,110 262,70"/>
+          <path class="cp-pulse-path" d="M26,220 C80,225 110,200 150,175 C190,150 210,110 262,70"/>
+
+          <g class="cp-node-anchor n1" transform="translate(26,220)">
+            <g class="cp-node">
+              <circle class="cp-node-ping" r="12"/>
+              <circle class="cp-node-ring" r="12"/>
+              <circle class="cp-node-dot" r="6"/>
             </g>
-            <g transform="translate(120,130)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <rect x="-32" y="34" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="10" y="34" width="10" height="9" fill="#fff" opacity="0.14"/>
+            <text class="cp-label-stage" x="0" y="22">Step 1</text>
+            <text class="cp-label-title" x="0" y="34">Train</text>
+          </g>
+
+          <g class="cp-node-anchor n2" transform="translate(150,175)">
+            <g class="cp-node">
+              <circle class="cp-node-ping" r="12"/>
+              <circle class="cp-node-ring" r="12"/>
+              <circle class="cp-node-dot" r="6"/>
             </g>
-            <g transform="translate(120,100)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <rect x="-32" y="34" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="10" y="34" width="10" height="9" fill="#fff" opacity="0.14"/>
-            </g>
-            <g transform="translate(120,78)">
-              <circle cx="0" cy="0" r="17" fill="var(--accent-light)"/>
-              <circle cx="0" cy="0" r="11" fill="none" stroke="var(--ink)" stroke-width="1.5" opacity="0.45"/>
-              <path d="M-7,26 -11,44 0,36 11,44 7,26 Z" fill="var(--accent)"/>
-              <path d="M-6,0 -2,5 7,-6" stroke="var(--ink)" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </g>
-          </svg>
-        </div>
-        <p class="role-tag">Verified &amp; Accredited</p>
+            <text class="cp-label-stage" x="0" y="-32">Step 2</text>
+            <text class="cp-label-title" x="0" y="-20">Certify</text>
+          </g>
+
+          <g class="cp-node-anchor cp-node-final" transform="translate(262,70)">
+            <circle class="cp-final-glow" r="12"/>
+            <circle class="cp-node-ring cp-node-ring-final" r="14"/>
+            <circle class="cp-node-dot cp-node-dot-final" r="8"/>
+            <circle class="cp-node-core" r="3"/>
+            <path class="cp-final-check" d="M-3,0 L-1,2.2 L3.5,-2.6"/>
+          </g>
+
+          <g class="cp-final-pill" transform="translate(198,88)">
+            <rect class="cp-final-pill-bg" width="100" height="24" rx="12"/>
+            <text class="cp-final-pill-text" x="50" y="16">Verify</text>
+          </g>
+        </svg>
       </div>
     </div>
   </section>

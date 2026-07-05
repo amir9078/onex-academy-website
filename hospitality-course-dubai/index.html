@@ -27,48 +27,54 @@
           <a href="/contact/" class="btn btn--ghost btn--on-ink">Book a free consultation</a>
         </div>
       </div>
-      <div class="career-scene" aria-hidden="true">
-        <div class="scene-float">
-          <svg viewBox="0 0 240 260">
-            <path d="M120,202 220,228 120,254 20,228 Z" fill="var(--ink-2)" opacity="0.9"/>
-            <g transform="translate(120,160)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <rect x="-32" y="34" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="-32" y="47" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="10" y="34" width="10" height="9" fill="#fff" opacity="0.14"/>
-              <rect x="10" y="47" width="10" height="9" fill="#fff" opacity="0.14"/>
+      <div class="career-path" data-stages="4">
+        <svg viewBox="0 0 300 280" role="img" aria-label="Career path: Guest Service Associate to Supervisor to Duty Manager to Hotel Manager" overflow="visible">
+          <path class="cp-road" d="M22,232 C60,232 58,196 96,186 C140,174 138,132 182,120 C222,109 222,60 268,40"/>
+          <path class="cp-road-fill" d="M22,232 C60,232 58,196 96,186 C140,174 138,132 182,120 C222,109 222,60 268,40"/>
+          <path class="cp-pulse-path" d="M22,232 C60,232 58,196 96,186 C140,174 138,132 182,120 C222,109 222,60 268,40"/>
+
+          <g class="cp-node-anchor n1" transform="translate(22,232)">
+            <g class="cp-node">
+              <circle class="cp-node-ping" r="12"/>
+              <circle class="cp-node-ring" r="12"/>
+              <circle class="cp-node-dot" r="6"/>
             </g>
-            <g transform="translate(120,130)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <rect x="-32" y="34" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="-32" y="47" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="10" y="34" width="10" height="9" fill="#fff" opacity="0.14"/>
-              <rect x="10" y="47" width="10" height="9" fill="#fff" opacity="0.14"/>
+            <text class="cp-label-stage" x="0" y="22">Stage 1</text>
+            <text class="cp-label-title" x="0" y="34">Guest Service Associate</text>
+          </g>
+
+          <g class="cp-node-anchor n2" transform="translate(96,186)">
+            <g class="cp-node">
+              <circle class="cp-node-ping" r="12"/>
+              <circle class="cp-node-ring" r="12"/>
+              <circle class="cp-node-dot" r="6"/>
             </g>
-            <g transform="translate(120,100)">
-              <path d="M0,0 40,20 0,40 -40,20 Z" fill="var(--accent-light)"/>
-              <path d="M-40,20 0,40 0,70 -40,50 Z" fill="var(--accent)"/>
-              <path d="M0,40 40,20 40,50 0,70 Z" fill="var(--ink-3)"/>
-              <rect x="-32" y="34" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="-32" y="47" width="10" height="9" fill="#fff" opacity="0.18"/>
-              <rect x="10" y="34" width="10" height="9" fill="#fff" opacity="0.14"/>
-              <rect x="10" y="47" width="10" height="9" fill="#fff" opacity="0.14"/>
+            <text class="cp-label-stage" x="0" y="-32">Stage 2</text>
+            <text class="cp-label-title" x="0" y="-20">Supervisor</text>
+          </g>
+
+          <g class="cp-node-anchor n3" transform="translate(182,120)">
+            <g class="cp-node">
+              <circle class="cp-node-ping" r="12"/>
+              <circle class="cp-node-ring" r="12"/>
+              <circle class="cp-node-dot" r="6"/>
             </g>
-            <path d="M95,190 145,175 155,183 105,198 Z" fill="var(--accent-light)"/>
-            <path d="M105,181 149,178.5" stroke="var(--ink-3)" stroke-width="1.5" opacity="0.5"/>
-            <path d="M100,189 144,186.5" stroke="var(--ink-3)" stroke-width="1.5" opacity="0.5"/>
-            <g transform="translate(58,220)">
-              <rect x="-14" y="-6" width="28" height="20" rx="3" fill="#fff" opacity="0.94"/>
-              <rect x="-6" y="-12" width="12" height="7" rx="2" fill="none" stroke="#fff" stroke-width="2"/>
-              <line x1="-14" y1="4" x2="14" y2="4" stroke="var(--ink-3)" stroke-width="1.5" opacity="0.35"/>
-            </g>
-          </svg>
-        </div>
-        <p class="role-tag">Hotel Manager</p>
+            <text class="cp-label-stage" x="0" y="-32">Stage 3</text>
+            <text class="cp-label-title" x="0" y="-20">Duty Manager</text>
+          </g>
+
+          <g class="cp-node-anchor cp-node-final" transform="translate(268,40)">
+            <circle class="cp-final-glow" r="12"/>
+            <circle class="cp-node-ring cp-node-ring-final" r="14"/>
+            <circle class="cp-node-dot cp-node-dot-final" r="8"/>
+            <circle class="cp-node-core" r="3"/>
+          </g>
+
+          <g class="cp-final-pill" transform="translate(158,54)">
+            <rect class="cp-final-pill-bg" width="130" height="24" rx="12"/>
+            <text class="cp-final-pill-text" x="65" y="16">Hotel Manager</text>
+          </g>
+        </svg>
       </div>
     </div>
   </section>

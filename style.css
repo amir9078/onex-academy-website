@@ -560,34 +560,139 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 }
 .tilt:hover .depth-chip { transform: perspective(300px) rotateX(0deg) translateY(-2px); }
 
-/* career scene — hand-built isometric "building" icon system, one per
-   vertical. A shared tower/platform base (same everywhere, for brand
-   cohesion) topped with a distinct prop per page, plus a role-tag pill
-   styled like a museum-diorama placard. Replaces the old flat iso-stack. */
-.career-scene { position: relative; width: 240px; margin: 0 auto; }
-.career-scene .scene-float {
-  animation: sceneFloat 6s ease-in-out infinite;
-  filter: drop-shadow(0 28px 34px rgba(11,12,40,0.45));
+/* career path — "ascending road" diagram system. A glowing road climbs
+   bottom-left to top-right; a pulse of light travels it end-to-end,
+   lighting each career-stage node as it passes, and finishes in a bright
+   destination pill naming the job title the learner becomes. Replaces
+   the earlier static isometric building diorama. Career-ladder pages
+   (Real Estate, Hospitality, AI) use the full diagonal climb; process-flow
+   pages (Add-ons, Accreditation) use a flatter rise so the geometry never
+   overclaims "promotion" for non-career content — see per-page markup. */
+.career-path { width: 300px; margin: 0 auto; }
+.career-path svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+.cp-road {
+  fill: none; stroke: var(--ink-3); stroke-width: 6;
+  stroke-linecap: round; stroke-linejoin: round; opacity: 0.55;
 }
-.career-scene svg { width: 100%; height: auto; display: block; overflow: visible; }
-.career-scene .role-tag {
-  position: relative; margin: -0.6rem auto 0; width: max-content; max-width: 90%;
-  background: var(--paper); color: var(--ink);
-  font-weight: 800; font-size: 0.78rem; letter-spacing: 0.02em; text-align: center;
-  padding: 0.55em 1.1em; border-radius: 999px;
-  box-shadow: 0 14px 28px -10px rgba(11,12,40,0.55);
-  border: 1px solid var(--paper-3);
+
+.cp-road-fill {
+  fill: none; stroke: var(--accent-light); stroke-width: 6;
+  stroke-linecap: round; stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px var(--accent-light));
+  stroke-dasharray: 640; stroke-dashoffset: 640;
+  animation: cpDraw 4.8s cubic-bezier(.65,0,.35,1) infinite;
 }
-.career-scene .role-tag::before {
-  content: ''; position: absolute; left: 50%; top: -22px; width: 1px; height: 22px;
-  background: linear-gradient(to bottom, transparent, var(--accent-light));
-  transform: translateX(-50%);
+@keyframes cpDraw {
+  0%, 8% { stroke-dashoffset: 640; }
+  62%    { stroke-dashoffset: 0; }
+  100%   { stroke-dashoffset: 0; }
 }
-@keyframes sceneFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+/* traveling pulse: a short bright dash on a long gap rides the same road.
+   Tolerant of small path-length differences across pages by design — no
+   per-page getTotalLength() measurement needed. */
+.cp-pulse-path {
+  fill: none; stroke: #fff; stroke-width: 8; stroke-linecap: round;
+  filter: drop-shadow(0 0 8px var(--accent-light)) drop-shadow(0 0 14px var(--accent-light));
+  stroke-dasharray: 24 616; stroke-dashoffset: 640; opacity: 0;
+  animation: cpTravel 4.8s cubic-bezier(.65,0,.35,1) infinite;
 }
-@media (max-width: 640px) { .career-scene { width: 168px; } .career-scene .role-tag { font-size: 0.68rem; padding: 0.5em 0.9em; } }
+@keyframes cpTravel {
+  0%   { stroke-dashoffset: 640; opacity: 0; }
+  6%   { opacity: 1; }
+  60%  { stroke-dashoffset: 0; opacity: 1; }
+  72%  { opacity: 0; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+.cp-node-ring {
+  fill: none; stroke: var(--accent); stroke-width: 2;
+  transform-box: fill-box; transform-origin: center;
+}
+.cp-node-dot {
+  fill: var(--ink-2); stroke: var(--accent-light); stroke-width: 2.5;
+  transform-box: fill-box; transform-origin: center;
+}
+/* IMPORTANT: an SVG "transform" presentation attribute (used on
+   .cp-node-anchor for translate positioning) is fully REPLACED — not
+   composed — by any CSS `transform` applied to that same element. So the
+   scale/pulse animations below must live on an INNER <g class="cp-node">
+   nested inside the positioned <g class="cp-node-anchor n1" transform="translate(x,y)">
+   wrapper, never on the anchor itself. Structure per node:
+   <g class="cp-node-anchor n1" transform="translate(x,y)">
+     <g class="cp-node"><circle class="cp-node-ping"/><circle class="cp-node-ring"/><circle class="cp-node-dot"/></g>
+     <text class="cp-label-stage">...</text><text class="cp-label-title">...</text>
+   </g> */
+.cp-node { animation: cpNodeLight 4.8s cubic-bezier(.65,0,.35,1) infinite; transform-box: fill-box; transform-origin: center; }
+.cp-node-anchor.n1 .cp-node { animation-delay: 0s; }
+.cp-node-anchor.n2 .cp-node { animation-delay: 1.1s; }
+.cp-node-anchor.n3 .cp-node { animation-delay: 2.4s; }
+@keyframes cpNodeLight {
+  0%, 20%  { transform: scale(1); }
+  26%      { transform: scale(1.15); }
+  34%, 100% { transform: scale(1); }
+}
+
+/* expanding "arrival" ping at every node, not just the final one */
+.cp-node-ping {
+  fill: none; stroke: var(--accent-light); stroke-width: 2; opacity: 0;
+  transform-box: fill-box; transform-origin: center;
+  animation: cpNodePing 4.8s cubic-bezier(.65,0,.35,1) infinite;
+}
+.cp-node-anchor.n1 .cp-node-ping { animation-delay: 0s; }
+.cp-node-anchor.n2 .cp-node-ping { animation-delay: 1.1s; }
+.cp-node-anchor.n3 .cp-node-ping { animation-delay: 2.4s; }
+@keyframes cpNodePing {
+  0%, 20% { transform: scale(1); opacity: 0; }
+  24%     { opacity: 0.8; }
+  40%     { transform: scale(1.9); opacity: 0; }
+  100%    { transform: scale(1); opacity: 0; }
+}
+
+.cp-node-ring-final { stroke-width: 2.5; }
+.cp-node-dot-final { fill: var(--accent); stroke: var(--accent-light); }
+.cp-node-core { fill: #fff; }
+.cp-final-glow {
+  fill: none; stroke: var(--accent-light); stroke-width: 2.5; opacity: 0;
+  transform-box: fill-box; transform-origin: center;
+  animation: cpFinalGlow 4.8s cubic-bezier(.65,0,.35,1) infinite;
+}
+@keyframes cpFinalGlow {
+  0%, 68% { transform: scale(1); opacity: 0; }
+  74%     { transform: scale(1.9); opacity: 0.9; }
+  90%     { transform: scale(1.9); opacity: 0; }
+  100%    { transform: scale(1); opacity: 0; }
+}
+.cp-final-check { fill: none; stroke: var(--ink); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+.cp-label-stage {
+  fill: var(--accent-light); font-family: 'Montserrat', sans-serif;
+  font-size: 7.5px; font-weight: 700; letter-spacing: 0.12em;
+  text-anchor: middle; text-transform: uppercase;
+}
+.cp-label-title {
+  fill: var(--paper); font-family: 'Montserrat', sans-serif;
+  font-size: 10.5px; font-weight: 700; text-anchor: middle;
+}
+
+.cp-final-pill-bg { fill: var(--paper); }
+.cp-final-pill-text {
+  fill: var(--ink); font-family: 'Montserrat', sans-serif;
+  font-size: 11px; font-weight: 800; text-anchor: middle;
+}
+
+@media (max-width: 640px) {
+  .career-path { width: 200px; }
+  .cp-label-stage { display: none; }
+  .cp-label-title { font-size: 9.5px; }
+}
+
+/* Reduced motion relies on the site's existing global override
+   (*{animation-duration:.01ms!important;animation-iteration-count:1!important}),
+   which collapses every keyframe above to its 100% frame: road fully
+   drawn and glowing, pulse faded out, nodes at rest, destination pill
+   lit — a clean, deliberate static frame. No extra rule needed here. */
 
 /* photo frame with 3D lift — for real learner photos reused across pages */
 .photo-3d {
