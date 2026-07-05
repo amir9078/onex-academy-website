@@ -688,6 +688,15 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
   .cp-label-title { font-size: 9.5px; }
 }
 
+/* descriptive caption tying the diagram's stages to what the programme
+   actually does at each step — sits directly under the diagram so the
+   visual and the value-prop copy read as one connected piece. */
+.cp-caption {
+  margin: var(--sp-4) auto 0; max-width: 300px; text-align: center;
+  font-size: 0.86rem; line-height: 1.65; color: var(--muted-on-ink);
+}
+.cp-caption strong { color: var(--paper); font-weight: 700; }
+
 /* Reduced motion relies on the site's existing global override
    (*{animation-duration:.01ms!important;animation-iteration-count:1!important}),
    which collapses every keyframe above to its 100% frame: road fully
