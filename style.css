@@ -560,33 +560,34 @@ h3 { font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 700; }
 }
 .tilt:hover .depth-chip { transform: perspective(300px) rotateX(0deg) translateY(-2px); }
 
-/* isometric floating stack — pure-CSS 3D decorative motif, no images */
-.iso-stack {
-  position: relative; width: 220px; height: 220px; margin: 0 auto;
-  transform-style: preserve-3d;
-  animation: isoFloat 6s ease-in-out infinite;
+/* career scene — hand-built isometric "building" icon system, one per
+   vertical. A shared tower/platform base (same everywhere, for brand
+   cohesion) topped with a distinct prop per page, plus a role-tag pill
+   styled like a museum-diorama placard. Replaces the old flat iso-stack. */
+.career-scene { position: relative; width: 240px; margin: 0 auto; }
+.career-scene .scene-float {
+  animation: sceneFloat 6s ease-in-out infinite;
+  filter: drop-shadow(0 28px 34px rgba(11,12,40,0.45));
 }
-.iso-stack .iso-layer {
-  position: absolute; inset: 0; border-radius: 18px;
-  background: linear-gradient(155deg, var(--accent-light), var(--accent));
-  box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
-  transform: rotateX(55deg) rotateZ(45deg) translateZ(0);
-  border: 1px solid rgba(255,255,255,0.25);
+.career-scene svg { width: 100%; height: auto; display: block; overflow: visible; }
+.career-scene .role-tag {
+  position: relative; margin: -0.6rem auto 0; width: max-content; max-width: 90%;
+  background: var(--paper); color: var(--ink);
+  font-weight: 800; font-size: 0.78rem; letter-spacing: 0.02em; text-align: center;
+  padding: 0.55em 1.1em; border-radius: 999px;
+  box-shadow: 0 14px 28px -10px rgba(11,12,40,0.55);
+  border: 1px solid var(--paper-3);
 }
-.iso-stack .iso-layer:nth-child(1) { transform: rotateX(55deg) rotateZ(45deg) translateZ(-40px) scale(0.86); opacity: 0.55; background: var(--ink-3); }
-.iso-stack .iso-layer:nth-child(2) { transform: rotateX(55deg) rotateZ(45deg) translateZ(-14px) scale(0.93); opacity: 0.8; background: var(--accent); }
-.iso-stack .iso-layer:nth-child(3) { transform: rotateX(55deg) rotateZ(45deg) translateZ(14px); background: linear-gradient(155deg, var(--accent-light), var(--accent)); }
-.iso-stack .iso-icon {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) translateZ(60px);
-  width: 56px; height: 56px; color: #fff; filter: drop-shadow(0 8px 14px rgba(0,0,0,0.35));
+.career-scene .role-tag::before {
+  content: ''; position: absolute; left: 50%; top: -22px; width: 1px; height: 22px;
+  background: linear-gradient(to bottom, transparent, var(--accent-light));
+  transform: translateX(-50%);
 }
-.iso-stack .iso-icon svg { width: 100%; height: 100%; display: block; }
-@media (max-width: 640px) { .iso-stack .iso-icon { width: 40px; height: 40px; } }
-@keyframes isoFloat {
-  0%, 100% { transform: translateY(0) rotateZ(0deg); }
-  50% { transform: translateY(-14px) rotateZ(2deg); }
+@keyframes sceneFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
-@media (max-width: 640px) { .iso-stack { width: 160px; height: 160px; } .iso-stack .iso-icon { font-size: 1.9rem; } }
+@media (max-width: 640px) { .career-scene { width: 168px; } .career-scene .role-tag { font-size: 0.68rem; padding: 0.5em 0.9em; } }
 
 /* photo frame with 3D lift — for real learner photos reused across pages */
 .photo-3d {
