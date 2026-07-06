@@ -28,54 +28,65 @@
         </div>
       </div>
       <div class="career-path" data-stages="4">
-        <svg viewBox="0 0 300 280" role="img" aria-label="Career path: Guest Service Associate to Supervisor to Duty Manager to Hotel Manager" overflow="visible">
-          <path class="cp-road" d="M22,232 C60,232 58,196 96,186 C140,174 138,132 182,120 C222,109 222,60 268,40"/>
-          <path class="cp-road-fill" d="M22,232 C60,232 58,196 96,186 C140,174 138,132 182,120 C222,109 222,60 268,40"/>
-          <path class="cp-pulse-path" d="M22,232 C60,232 58,196 96,186 C140,174 138,132 182,120 C222,109 222,60 268,40"/>
+        <svg viewBox="0 0 300 280" role="img" aria-label="Career orbit spiralling from Guest Service Associate through Supervisor and Duty Manager into Hotel Manager at the centre" overflow="visible">
+          <defs>
+            <radialGradient id="hpOrbGrad" cx="35%" cy="30%" r="75%">
+              <stop offset="0%" style="stop-color:#ffffff"/>
+              <stop offset="45%" style="stop-color:var(--accent-light)"/>
+              <stop offset="100%" style="stop-color:var(--ink-2)"/>
+            </radialGradient>
+          </defs>
 
-          <g class="cp-node-anchor n1" transform="translate(22,232)">
+          <circle class="hp-orbit-guide" cx="150" cy="145" r="108"/>
+          <circle class="hp-orbit-guide" cx="150" cy="145" r="70"/>
+
+          <path class="cp-road" d="M66,216 A95,95 0 0,1 177,70 A65,65 0 0,1 159,194 A35,35 0 0,1 150,145"/>
+          <path class="cp-road-fill" d="M66,216 A95,95 0 0,1 177,70 A65,65 0 0,1 159,194 A35,35 0 0,1 150,145"/>
+          <path class="cp-pulse-path" d="M66,216 A95,95 0 0,1 177,70 A65,65 0 0,1 159,194 A35,35 0 0,1 150,145"/>
+
+          <g class="cp-node-anchor n1" transform="translate(66,216)">
             <g class="cp-node">
               <circle class="cp-node-ping" r="12"/>
-              <circle class="cp-node-ring" r="12"/>
-              <circle class="cp-node-dot" r="6"/>
+              <circle class="hp-orb-halo" r="10"/>
+              <circle class="hp-orb-core" r="7"/>
             </g>
-            <text class="cp-label-stage" x="0" y="22">Stage 1</text>
-            <text class="cp-label-title" x="0" y="34">Guest Service Associate</text>
+            <text class="cp-label-stage" x="0" y="27">Stage 1</text>
+            <text class="cp-label-title" x="0" y="39">Guest Service Associate</text>
           </g>
 
-          <g class="cp-node-anchor n2" transform="translate(96,186)">
+          <g class="cp-node-anchor n2" transform="translate(177,70)">
             <g class="cp-node">
               <circle class="cp-node-ping" r="12"/>
-              <circle class="cp-node-ring" r="12"/>
-              <circle class="cp-node-dot" r="6"/>
+              <circle class="hp-orb-halo" r="10"/>
+              <circle class="hp-orb-core" r="7"/>
             </g>
-            <text class="cp-label-stage" x="0" y="-32">Stage 2</text>
-            <text class="cp-label-title" x="0" y="-20">Supervisor</text>
+            <text class="cp-label-stage" x="0" y="-35">Stage 2</text>
+            <text class="cp-label-title" x="0" y="-23">Supervisor</text>
           </g>
 
-          <g class="cp-node-anchor n3" transform="translate(182,120)">
+          <g class="cp-node-anchor n3" transform="translate(159,194)">
             <g class="cp-node">
               <circle class="cp-node-ping" r="12"/>
-              <circle class="cp-node-ring" r="12"/>
-              <circle class="cp-node-dot" r="6"/>
+              <circle class="hp-orb-halo" r="10"/>
+              <circle class="hp-orb-core" r="7"/>
             </g>
-            <text class="cp-label-stage" x="0" y="-32">Stage 3</text>
-            <text class="cp-label-title" x="0" y="-20">Duty Manager</text>
+            <text class="cp-label-stage" x="0" y="27">Stage 3</text>
+            <text class="cp-label-title" x="0" y="39">Duty Manager</text>
           </g>
 
-          <g class="cp-node-anchor cp-node-final" transform="translate(268,40)">
+          <g class="cp-node-anchor cp-node-final" transform="translate(150,145)">
+            <ellipse class="hp-orbit-ring" cx="0" cy="0" rx="24" ry="9" transform="rotate(-24)"/>
             <circle class="cp-final-glow" r="12"/>
-            <circle class="cp-node-ring cp-node-ring-final" r="14"/>
-            <circle class="cp-node-dot cp-node-dot-final" r="8"/>
-            <circle class="cp-node-core" r="3"/>
+            <circle class="hp-orb-halo" r="13"/>
+            <circle class="hp-hub-core" r="8"/>
           </g>
 
-          <g class="cp-final-pill" transform="translate(158,54)">
+          <g class="cp-final-pill" transform="translate(58,166)">
             <rect class="cp-final-pill-bg" width="130" height="24" rx="12"/>
             <text class="cp-final-pill-text" x="65" y="16">Hotel Manager</text>
           </g>
         </svg>
-        <p class="cp-caption"><strong>Foundation</strong> builds the fundamentals, the <strong>Hotel Career Immersion</strong> puts you on a real hotel floor for 15 days, and the <strong>6-month internship</strong> that follows is built to carry you toward hotel-management responsibility.</p>
+        <p class="cp-caption"><strong>Foundation</strong> builds the fundamentals, the <strong>Hotel Career Immersion</strong> puts you on a real hotel floor for 15 days, and the <strong>6-month internship</strong> that follows orbits you steadily toward hotel-management responsibility.</p>
       </div>
     </div>
   </section>
@@ -89,7 +100,7 @@
         <article class="tier tilt">
           <div class="tier-head">
             <p class="tier-eyebrow">Foundation</p>
-            <h3>Online Foundation</h3>
+            <h3>Foundation</h3>
             <p class="tier-best">Best for anyone starting out who wants the fundamentals and AI skills before stepping onto a hotel floor.</p>
           </div>
           <div class="tier-body">
@@ -179,7 +190,7 @@
       <div class="faq" style="margin-top:var(--sp-6);">
         <div class="faq-item" data-open="false">
           <button class="faq-q"><span>What's the difference between the two programmes?</span><span class="plus">+</span></button>
-          <div class="faq-a"><p>The Online Foundation teaches hospitality and AI fundamentals online. The Hotel Career Immersion adds a real, 15-day live internship inside a working Dubai hotel, plus a recommendation letter, placement support and eligibility for the 6-month practical internship.</p></div>
+          <div class="faq-a"><p>Foundation teaches hospitality and AI fundamentals, self-paced and online. The Hotel Career Immersion adds a real, 15-day live internship inside a working Dubai hotel, plus a recommendation letter, placement support and eligibility for the 6-month practical internship.</p></div>
         </div>
         <div class="faq-item" data-open="false">
           <button class="faq-q"><span>Is this a real internship or a simulation?</span><span class="plus">+</span></button>
@@ -187,7 +198,7 @@
         </div>
         <div class="faq-item" data-open="false">
           <button class="faq-q"><span>Is the certificate KHDA-approved?</span><span class="plus">+</span></button>
-          <div class="faq-a"><p>Yes. Programmes are accredited by Vocatech (KHDA-approved), plus international accreditation and recognition &mdash; see our <a href="/accreditation/">accreditation page</a>.</p></div>
+          <div class="faq-a"><p>Yes &mdash; our programmes hold KHDA approval via Vocatech, alongside further international accreditation and recognition. See our <a href="/accreditation/">accreditation page</a>.</p></div>
         </div>
         <div class="faq-item" data-open="false">
           <button class="faq-q"><span>What is the 6-month practical internship?</span><span class="plus">+</span></button>
@@ -232,14 +243,14 @@
     {
       "@type": "ItemList",
       "itemListElement": [
-        { "@type": "Course", "position": 1, "name": "Hospitality Online Foundation", "description": "Online hospitality and AI-for-hospitality fundamentals, service-excellence modules and a KHDA-approved certificate.", "provider": { "@type": "EducationalOrganization", "name": "OneX Academy" }, "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online" } },
+        { "@type": "Course", "position": 1, "name": "Hospitality Foundation", "description": "Self-paced hospitality and AI-for-hospitality fundamentals, service-excellence modules and a KHDA-approved certificate.", "provider": { "@type": "EducationalOrganization", "name": "OneX Academy" }, "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online" } },
         { "@type": "Course", "position": 2, "name": "Hotel Career Immersion", "description": "15-day live hotel internship in Dubai with structured modules, a KHDA-approved certificate, recommendation letter, placement support and a 6-month practical internship.", "provider": { "@type": "EducationalOrganization", "name": "OneX Academy" }, "url": "https://amir9078.github.io/onex-academy-website/hotel-career-immersion-dubai/", "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "onsite", "location": { "@type": "Place", "name": "Dubai, United Arab Emirates" } } }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "What's the difference between the two programmes?", "acceptedAnswer": { "@type": "Answer", "text": "The Online Foundation teaches hospitality and AI fundamentals online. The Hotel Career Immersion adds a real 15-day internship, a recommendation letter and a 6-month practical internship." } },
+        { "@type": "Question", "name": "What's the difference between the two programmes?", "acceptedAnswer": { "@type": "Answer", "text": "Foundation teaches hospitality and AI fundamentals, self-paced and online. The Hotel Career Immersion adds a real 15-day internship, a recommendation letter and a 6-month practical internship." } },
         { "@type": "Question", "name": "Is this a real internship or a simulation?", "acceptedAnswer": { "@type": "Answer", "text": "It is a real, live internship inside an operating Dubai hotel, not a classroom simulation." } },
         { "@type": "Question", "name": "What is the 6-month practical internship?", "acceptedAnswer": { "@type": "Answer", "text": "A placement Hotel Career Immersion graduates are eligible for after certification, extending real hotel-floor experience beyond the initial 15 days." } }
       ]

@@ -28,35 +28,61 @@
         </div>
       </div>
       <div class="career-path" data-stages="3">
-        <svg viewBox="0 0 300 280" role="img" aria-label="Career path: Analyst to AI-Augmented Specialist to Senior Specialist or Team Lead" overflow="visible">
-          <path class="cp-road" d="M30,230 C70,230 65,180 120,165 C180,148 200,80 260,50"/>
-          <path class="cp-road-fill" d="M30,230 C70,230 65,180 120,165 C180,148 200,80 260,50"/>
-          <path class="cp-pulse-path" d="M30,230 C70,230 65,180 120,165 C180,148 200,80 260,50"/>
+        <svg viewBox="0 0 300 280" role="img" aria-label="Circuit ascent from Analyst through AI-Augmented Specialist to Senior Specialist or Team Lead" overflow="visible">
+          <g class="ai-grid" aria-hidden="true">
+            <circle class="ai-grid-dot" cx="20" cy="30" r="1.6"/>
+            <circle class="ai-grid-dot" cx="70" cy="30" r="1.6"/>
+            <circle class="ai-grid-dot" cx="20" cy="80" r="1.6"/>
+            <circle class="ai-grid-dot" cx="200" cy="30" r="1.6"/>
+            <circle class="ai-grid-dot" cx="250" cy="30" r="1.6"/>
+            <circle class="ai-grid-dot" cx="220" cy="110" r="1.6"/>
+            <circle class="ai-grid-dot" cx="270" cy="130" r="1.6"/>
+            <circle class="ai-grid-dot" cx="20" cy="130" r="1.6"/>
+            <circle class="ai-grid-dot" cx="70" cy="190" r="1.6"/>
+            <circle class="ai-grid-dot" cx="20" cy="180" r="1.6"/>
+            <circle class="ai-grid-dot" cx="230" cy="220" r="1.6"/>
+            <circle class="ai-grid-dot" cx="110" cy="240" r="1.6"/>
+            <circle class="ai-grid-dot" cx="170" cy="230" r="1.6"/>
+          </g>
+
+          <path class="cp-road" d="M30,230 L30,165 L45,150 L140,150 L140,85 L155,70 L260,70 L260,50"/>
+          <path class="cp-road-fill" d="M30,230 L30,165 L45,150 L140,150 L140,85 L155,70 L260,70 L260,50"/>
+          <path class="cp-pulse-path" d="M30,230 L30,165 L45,150 L140,150 L140,85 L155,70 L260,70 L260,50"/>
 
           <g class="cp-node-anchor n1" transform="translate(30,230)">
             <g class="cp-node">
               <circle class="cp-node-ping" r="12"/>
-              <circle class="cp-node-ring" r="12"/>
-              <circle class="cp-node-dot" r="6"/>
+              <line class="ai-hex-pin" x1="13" y1="0" x2="19" y2="0"/>
+              <line class="ai-hex-pin" x1="-6.5" y1="11.26" x2="-9" y2="16.6"/>
+              <line class="ai-hex-pin" x1="-6.5" y1="-11.26" x2="-9" y2="-16.6"/>
+              <path class="ai-hex-fill" d="M13,0 L6.5,11.26 L-6.5,11.26 L-13,0 L-6.5,-11.26 L6.5,-11.26 Z"/>
+              <path class="ai-hex-outline" d="M13,0 L6.5,11.26 L-6.5,11.26 L-13,0 L-6.5,-11.26 L6.5,-11.26 Z"/>
             </g>
-            <text class="cp-label-stage" x="0" y="22">Stage 1</text>
-            <text class="cp-label-title" x="0" y="34">Analyst</text>
+            <text class="cp-label-stage" x="0" y="27">Stage 1</text>
+            <text class="cp-label-title" x="0" y="39">Analyst</text>
           </g>
 
-          <g class="cp-node-anchor n2" transform="translate(120,165)">
+          <g class="cp-node-anchor n2" transform="translate(140,150)">
             <g class="cp-node">
               <circle class="cp-node-ping" r="12"/>
-              <circle class="cp-node-ring" r="12"/>
-              <circle class="cp-node-dot" r="6"/>
+              <line class="ai-hex-pin" x1="13" y1="0" x2="19" y2="0"/>
+              <line class="ai-hex-pin" x1="-6.5" y1="11.26" x2="-9" y2="16.6"/>
+              <line class="ai-hex-pin" x1="-6.5" y1="-11.26" x2="-9" y2="-16.6"/>
+              <path class="ai-hex-fill" d="M13,0 L6.5,11.26 L-6.5,11.26 L-13,0 L-6.5,-11.26 L6.5,-11.26 Z"/>
+              <path class="ai-hex-outline" d="M13,0 L6.5,11.26 L-6.5,11.26 L-13,0 L-6.5,-11.26 L6.5,-11.26 Z"/>
             </g>
-            <text class="cp-label-stage" x="0" y="-32">Stage 2</text>
-            <text class="cp-label-title" x="0" y="-20">AI-Augmented Specialist</text>
+            <text class="cp-label-stage" x="46" y="-4">Stage 2</text>
+            <text class="cp-label-title" x="46" y="8">AI-Augmented</text>
+            <text class="cp-label-title" x="46" y="20">Specialist</text>
           </g>
 
           <g class="cp-node-anchor cp-node-final" transform="translate(260,50)">
             <circle class="cp-final-glow" r="12"/>
-            <circle class="cp-node-ring cp-node-ring-final" r="14"/>
-            <circle class="cp-node-dot cp-node-dot-final" r="8"/>
+            <line class="ai-spark" x1="0" y1="-20" x2="0" y2="-13"/>
+            <line class="ai-spark" x1="14" y1="-10" x2="9" y2="-6"/>
+            <line class="ai-spark" x1="-14" y1="-10" x2="-9" y2="-6"/>
+            <path class="ai-hex-fill-final" d="M15,0 L7.5,13 L-7.5,13 L-15,0 L-7.5,-13 L7.5,-13 Z"/>
+            <path class="ai-hex-outline-final" d="M15,0 L7.5,13 L-7.5,13 L-15,0 L-7.5,-13 L7.5,-13 Z"/>
             <circle class="cp-node-core" r="3"/>
           </g>
 
@@ -65,7 +91,7 @@
             <text class="cp-final-pill-text" x="95" y="16" style="font-size:9.5px;">Senior Specialist / Team Lead</text>
           </g>
         </svg>
-        <p class="cp-caption">Each AI Master Course takes you from practical fundamentals to <strong>specialist-level application</strong> in your field, with a <strong>6-month practical internship</strong> to put what you've learned to work.</p>
+        <p class="cp-caption">Each AI Master Course wires in practical fundamentals first, then routes you toward <strong>specialist-level application</strong> in your field, with a <strong>6-month practical internship</strong> to put the circuit to real work.</p>
       </div>
     </div>
   </section>
@@ -151,7 +177,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/><path d="M22 8v6"/></svg>
         </div>
         <div>
-          <h3>Plus: a 6-month practical internship</h3>
+          <h3>The circuit doesn't end here &mdash; a 6-month practical internship follows</h3>
           <p>Learning the tools is step one. Every AI Master Course graduate is eligible for a 6-month practical internship placement afterwards, so you apply what you've learned on real projects, with a real team, in a real workplace &mdash; not just on a certificate.</p>
         </div>
       </div>
@@ -212,7 +238,7 @@
         </div>
         <div class="faq-item" data-open="false">
           <button class="faq-q"><span>Is this course KHDA-accredited?</span><span class="plus">+</span></button>
-          <div class="faq-a"><p>Yes. Every AI Master Course is accredited by Vocatech (KHDA-approved), plus international accreditation and recognition. See our <a href="/accreditation/">accreditation page</a> for the permit number.</p></div>
+          <div class="faq-a"><p>Yes &mdash; every AI Master Course carries Vocatech's KHDA approval, alongside additional international accreditation and recognition. See our <a href="/accreditation/">accreditation page</a> for the permit number.</p></div>
         </div>
         <div class="faq-item" data-open="false">
           <button class="faq-q"><span>Can I study online?</span><span class="plus">+</span></button>
@@ -271,7 +297,7 @@
       "@type": "FAQPage",
       "mainEntity": [
         { "@type": "Question", "name": "How do I choose between the 8 courses?", "acceptedAnswer": { "@type": "Answer", "text": "Start with your current role or the field you're moving into — each course is built around one profession's real workflow." } },
-        { "@type": "Question", "name": "Is this course KHDA-accredited?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every AI Master Course is accredited by Vocatech (KHDA-approved), plus international accreditation and recognition." } },
+        { "@type": "Question", "name": "Is this course KHDA-accredited?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every AI Master Course carries Vocatech's KHDA approval, alongside additional international accreditation and recognition." } },
         { "@type": "Question", "name": "What happens after I finish the course?", "acceptedAnswer": { "@type": "Answer", "text": "Graduates are eligible for a 6-month practical internship placement, included with every AI Master Course." } }
       ]
     }
