@@ -162,6 +162,23 @@
     });
   }
 
+  // path-tabs — homepage career-path showcase. Click a tab, show its panel,
+  // hide the rest. Plain click handlers + ARIA state, no framework needed.
+  function initPathTabs() {
+    var tabs = document.querySelectorAll('.path-tab');
+    if (!tabs.length) return;
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var targetId = tab.getAttribute('aria-controls');
+        tabs.forEach(function (t) { t.setAttribute('aria-selected', 'false'); });
+        document.querySelectorAll('.path-panel').forEach(function (p) { p.classList.remove('is-active'); });
+        tab.setAttribute('aria-selected', 'true');
+        var panel = document.getElementById(targetId);
+        if (panel) panel.classList.add('is-active');
+      });
+    });
+  }
+
   function initProgressBar() {
     var bar = document.createElement('div');
     bar.className = 'scroll-progress';
@@ -185,5 +202,6 @@
     initCounters();
     initProgressBar();
     initTiltCards();
+    initPathTabs();
   });
 })();
